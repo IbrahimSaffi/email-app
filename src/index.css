@@ -1,13 +1,60 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+    padding: 20px;
+}
+a {
+    margin: 10px;
+    color: black;
+    font-weight: bolder;
+}
+a:hover {
+    color: blue;
+}
+.inbox {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 30px;
+}
+.messages {
+    display: flex;
+    flex-direction: column;
+}
+.message {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 90vw;
+    justify-content: space-between;
+    gap: 5%;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+.name ,.date {
+    width: 10%;
+}
+.date {
+    white-space: nowrap;
+}
+.subject {
+    width: 25%;
+    white-space: nowrap;
+    text-align: left;
+    margin-right: 5%;
+}
+.body {
+ width: 20%;
+ color: gray;
+ text-overflow: ellipsis;
+white-space: nowrap;
+overflow: hidden;
+}
+.line {
+    margin-bottom: 20px;
 }
