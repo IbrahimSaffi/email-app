@@ -13,6 +13,10 @@ export default function Main() {
   let [login, setLogin] = useState(false)
   let goTo = useNavigate()
   let [updateMessages, setMessages] = useState([])
+  let [error,setError] = useState(false)
+  function errorDisplay(bool){
+    setError(bool)
+  }
   useEffect(() => {
     if (!login) {
       goTo("login")
@@ -58,8 +62,8 @@ export default function Main() {
       <Route path='/' element={<Layout />}>
         <Route index element={<Home />} />
         <Route path='about' element={<About />} />
-        <Route path='inbox' element={<Inbox senddata={senddata} recieveMessages={recieveMessages} updateMessages={updateMessages}/>} />
-        <Route path={'inbox/:id'} element={<Message />} />
+        <Route path='inbox' element={<Inbox error={error} errorDisplay={errorDisplay} senddata={senddata} recieveMessages={recieveMessages} updateMessages={updateMessages}/>} />
+        <Route path={'inbox/:id'} element={<Message msgs ={updateMessages} />} />
       </Route>
     </Routes>
 

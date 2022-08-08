@@ -12,7 +12,8 @@ export default function Inbox(props) {
     <div>
       <div className='messages'>
         {props.updateMessages.map(ele => {
-          return <div onClick={() => goTo(ele.id)} >
+          console.log(ele.id)
+          return <div onClick={() => goTo(ele.id.toString())} >
             <div className='message'>
               <p className='name'>
                 {ele.name}
@@ -27,14 +28,29 @@ export default function Inbox(props) {
       </div>
       <div className='new-message' >
         <h3>Enter Name</h3>
-        <input ref={name} type="text" />
+        <input ref={name} type="text"/>
         <h3>Enter Email</h3>
         <input ref={email} type="email" />
-        <h3>Enter Message</h3>
+        <p style={ {display:props.error?"block":"none",color:"red"}}>Enter valid email</p>
+        <h3>Subject of Message</h3>
         <textarea ref={subject} name="" id="" cols="10" rows="10"></textarea>
+        <h3>Message</h3>
         <textarea ref={body} name="" id="" cols="10" rows="10"></textarea>
-        <button onClick={()=>{props.senddata(name.current.value,email.current.value,props.updateMessages.length+1,body.current.value,subject.current.value,new Date())
-        props.recieveMessages()
+        <button className='submit' onClick={()=>
+        {
+          if(email.current.value.includes("@")){
+            {props.senddata(name.current.value,email.current.value,props.updateMessages.length+1,body.current.value,subject.current.value,new Date().toLocaleDateString())
+              props.recieveMessages()
+              name.current.value=""
+              email.current.value=""
+              body.current.value=""
+              subject.current.value=""
+              props.errorDisplay(false)
+          }
+        }
+          else{
+          props.errorDisplay(true) 
+          }
         }} >Submit</button>
       </div>
     </div>

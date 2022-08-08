@@ -5,9 +5,9 @@ export default function Layout() {
     <div>
       <div className="header">
       <h1>
-      Best Email Client
+      Welcome to best Email Client!
       </h1>
-      <nav>
+      <nav className='links' >
      <Link to={""}>
       Home
      </Link>
@@ -19,6 +19,7 @@ export default function Layout() {
      </Link>
       </nav>
       </div>
+      <hr className='line' />
       <Outlet/>
       </div>
   )

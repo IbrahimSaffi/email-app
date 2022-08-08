@@ -5,9 +5,23 @@
 }
 body {
     padding: 20px;
+    background-color: RGB(253, 243, 229);
+    margin-top: 5vh;
+    margin-left: 15vw;
+    margin-right: 10vw;
+}
+.line{
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+.links {
+    margin-top: 30px;
+    display: flex;
+    gap: 10px;
 }
 a {
-    margin: 10px;
+    /* margin: 10px; */
     color: black;
     font-weight: bolder;
 }
@@ -20,7 +34,7 @@ a:hover {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    margin-left: 30px;
+    /* margin-left: 30px; */
 }
 .messages {
     display: flex;
@@ -31,22 +45,22 @@ a:hover {
     flex-direction: row;
     flex-wrap: nowrap;
     width: 90vw;
-    justify-content: space-between;
-    gap: 5%;
+   gap: 2vw;
     margin-bottom: 5px;
     cursor: pointer;
 }
 .name ,.date {
-    width: 10%;
+    width: 5%;
 }
 .date {
     white-space: nowrap;
 }
 .subject {
-    width: 25%;
+    width: 35%;
     white-space: nowrap;
-    text-align: left;
-    margin-right: 5%;
+    text-overflow:"-";
+    overflow: hidden;
+
 }
 .body {
  width: 20%;
@@ -55,6 +69,50 @@ a:hover {
 white-space: nowrap;
 overflow: hidden;
 }
-.line {
-    margin-bottom: 20px;
+.new-message{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.new-message *{
+    margin-top: 5px;
+}
+input,textarea {
+    background-color: transparent;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid gray;
+}
+.submit {
+    border-radius: 5px;
+    width: 100px;
+    border: none;
+    color:rgb(67, 66, 66);
+    padding: 5px;
+    background-color: paleturquoise;
+    align-self: center;
+    cursor: pointer;
+}
+.submit:hover {
+    filter: brightness(70%);
+}
+.msg-detail{
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
+.login {
+    margin-top: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.login button{
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color:paleturquoise;
 }
